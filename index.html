@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="bg"></div>
 
-    <script src="hero.js"></script>
-    <script src="enemy.js"></script>
-    <script src="init.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>repl.it</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="bg"></div>
+  <iframe src="audio/silence" allow="autoplay" id="audio" style="display:none"></iframe>
+  <audio id="audio" autoplay>
+    <source src="audio/dying.wav">
+  </audio>
+  <script src="hero.js"></script>
+  <script src="enemy.js"></script>
+  <script src="init.js"></script>
+</body>
+
 </html>

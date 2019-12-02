@@ -1,55 +1,36 @@
-// class Enemy {
-//   constructor() {
-//     this.class = "enemy";
-//     this.bgPosition = 0;
-//     this.top = 0;
-//     this.left = 0;
-//     this.randomPosition = Math.floor(Math.random() * 756);
-//     this.createEnemy();
-//   }
-//   createEnemy() {
-//     const enemy = document.createElement("div");
-//     enemy.className = this.class;
-//     enemy.style.backgroundPosition = this.bgPosition;
-//     enemy.style.left = this.randomPosition + "px";
-//     document.getElementById("bg").appendChild(enemy);
-//   }
-// }
-
-// 800 600
-
 class Enemy {
-  constructor() {
+  constructor(enemyTop, enemyLive, enemyDeath) {
     this.class = "enemy";
-    this.bgPosition = 0;
-    this.top = 0;
-    this.left = 0;
-    this.enemyCount = 0;
+    this.enemy = document.createElement("div");
+    this.top = enemyTop;
+    this.randomLeft = Math.floor(Math.random() * 76) * 10;
+    this.live = enemyLive;
+    this.death = enemyDeath;
+    this.enemyCreate(); //실행
+    this.enemyRain(); //실행
   }
-  createEnemy() {
-    if (this.enemyCount < 10) {
-      const bg = document.getElementById("bg");
-      const enemy = document.createElement("div");
-      const randomPosition = Math.floor(Math.random() * 756);
-      enemy.className = this.class;
-      enemy.style.backgroundPosition = this.bgPosition + "px";
-      enemy.style.left = randomPosition + "px";
-      bg.appendChild(enemy);
-      this.enemyCount++;
-    }
+  enemyCreate() {
+    const bg = document.getElementById("bg");
+    this.enemy.className = this.class;
+    this.enemy.style.backgroundPosition = this.live + "px";
+    this.enemy.style.left = this.randomLeft + "px";
+    bg.appendChild(this.enemy);
   }
+  //enemy 내리기
   enemyRain() {
-    for (let i = 0; i < this.enemyCount; i++) {
-      const enemy = document.getElementsByClassName(this.class)[i];
-      let val = enemy.style.top;
-      val = Number(val.split("px")[0]) + 20 + "px";
-
-      if (Number(val.split("px")[0]) >= 546) {
-        document.getElementById("bg").removeChild(enemy);
-        this.enemyCount--;
-        console.log(생성.left);
+    const bg = document.getElementById("bg");
+    const life = setInterval(() => {
+      this.top += 10;
+      this.enemy.style.top = this.top + "px";
+      console.log(다빈.left)
+      console.log(this.randomLeft)
+      if (this.top >= 545 && ((다빈.left - 17.5) <= this.randomLeft && (다빈.left + 17.5) >= this.randomLeft)) {
+        clearInterval(life);
+        this.enemy.style.backgroundPosition = this.death + 'px';
+      } else if (this.top > 546) {
+        clearInterval(life);
+        bg.removeChild(this.enemy);
       }
-      enemy.style.top = val;
-    }
+    }, 100);
   }
 }
