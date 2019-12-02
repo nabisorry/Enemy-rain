@@ -27,6 +27,8 @@ class Enemy {
       if (this.top >= 545 && dabin.left - 17.5 <= this.randomLeft && dabin.left + 17.5 >= this.randomLeft) {
         clearInterval(life);
         this.enemy.style.backgroundPosition = this.death + "px";
+        const audio = new Audio("audio/dying.wav");
+        audio.play();
         setTimeout(() => {
           bg.removeChild(this.enemy);
         }, 1000);
