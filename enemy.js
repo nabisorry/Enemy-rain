@@ -22,13 +22,17 @@ class Enemy {
     const life = setInterval(() => {
       this.top += 10;
       this.enemy.style.top = this.top + "px";
-      console.log(다빈.left)
-      console.log(this.randomLeft)
-      if (this.top >= 545 && ((다빈.left - 17.5) <= this.randomLeft && (다빈.left + 17.5) >= this.randomLeft)) {
+
+      console.log(this.randomLeft);
+      if (this.top >= 545 && dabin.left - 17.5 <= this.randomLeft && dabin.left + 17.5 >= this.randomLeft) {
         clearInterval(life);
-        this.enemy.style.backgroundPosition = this.death + 'px';
+        this.enemy.style.backgroundPosition = this.death + "px";
+        setTimeout(() => {
+          bg.removeChild(this.enemy);
+        }, 1000);
       } else if (this.top > 546) {
         clearInterval(life);
+
         bg.removeChild(this.enemy);
       }
     }, 100);

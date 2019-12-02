@@ -1,6 +1,6 @@
 class Hero {
-  constructor(id, frontHero, leftHero, rightHero) {
-    this.heroId = id;
+  constructor(name, frontHero, leftHero, rightHero) {
+    this.heroName = name;
     this.top = 546;
     this.left = 400;
     this.positionFront = frontHero;
@@ -39,4 +39,3 @@ class Hero {
     this.hero.style.backgroundPosition = this.positionFront;
   }
 }
-

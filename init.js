@@ -1,17 +1,16 @@
-const 다빈 = new Hero("다빈", "105px", "70px", "35px");
+const dabin = new Hero("dabin", "105px", "70px", "35px");
 
-다빈.createHero();
+dabin.createHero();
 
 window.addEventListener("keydown", event => {
   if (event.keyCode === 37) {
-    다빈.moveLeft();
+    dabin.moveLeft();
   } else if (event.keyCode === 39) {
-    다빈.moveRight();
+    dabin.moveRight();
   }
 });
-
 window.addEventListener("keyup", event => {
-  다빈.moveFront();
+  dabin.moveFront();
 });
 
 setInterval(() => {
